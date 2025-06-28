@@ -17,6 +17,4 @@ mongoose.connect(process.env.MONGO_URI)
       console.log(`Server running at http://localhost:${process.env.PORT}`);
     });
   })
-  .catch(err => {
-    console.error("Mongo connection error:", err.message);
-  });
+  .catch(err => console.error(" MongoDB connection error:", err.message));

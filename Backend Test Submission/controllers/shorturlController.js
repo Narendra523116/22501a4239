@@ -1,9 +1,10 @@
+
 const ShortUrl = require('../models/shortURL');
 const Log = require('../utils/logger');
 
 exports.createShortUrl = async (req, res) => {
   const { url, validity, shortcode } = req.body;
-  const expiresAt = new Date(Date.now() + parseInt(validity) * 1000); // validity in seconds
+  const expiresAt = new Date(Date.now() + parseInt(validity) * 1000);
 
   try {
     const existing = await ShortUrl.findOne({ shortcode });
